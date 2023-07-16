@@ -26,7 +26,7 @@ namespace ExchangeApp
 
             using (HttpClient client = new HttpClient())
             {
-                // HTTP isteði yapma
+                // HTTP isteÃ°i yapma
                 HttpResponseMessage response = client.GetAsync(url).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -53,12 +53,12 @@ namespace ExchangeApp
                 }
                 else
                 {
-                    Console.WriteLine("HTTP isteði baþarýsýz oldu. Hata kodu: " + response.StatusCode);
+                    Console.WriteLine("HTTP isteÃ°i baÃ¾arÃ½sÃ½z oldu. Hata kodu: " + response.StatusCode);
                 }
             }
             foreach (var currency in currencyList)
             {
-                if (currency.Alis.Length>0 || currency.Satis.Length > 0)
+                if (currency.Alis.Length>0 && currency.Satis.Length > 0)
                 {
                     dataGridView1.Rows.Add(currency.CurrencyCode, currency.Alis, currency.Satis);
 
@@ -84,12 +84,12 @@ namespace ExchangeApp
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen miktarý giriniz");
+                    MessageBox.Show("LÃ¼tfen miktarÃ½ giriniz");
                 }
             }
             catch
             {
-                MessageBox.Show("Lütfen geçerli bir sayý giriniz");
+                MessageBox.Show("LÃ¼tfen geÃ§erli bir sayÃ½ giriniz");
             }
 
         }
@@ -104,12 +104,12 @@ namespace ExchangeApp
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen tutarý giriniz");
+                    MessageBox.Show("LÃ¼tfen tutarÃ½ giriniz");
                 }
             }
             catch
             {
-                MessageBox.Show("Lütfen geçerli bir sayý giriniz");
+                MessageBox.Show("LÃ¼tfen geÃ§erli bir sayÃ½ giriniz");
             }
 
 
